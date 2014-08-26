@@ -1,22 +1,26 @@
-Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-  Rails.application.routes.draw do
-    root 'pictures#index'
+Rails.application.routes.draw do
+
     get 'pictures' => 'pictures#index'
 
-    get 'pictures/:id/edit' => "pictures#edit", as "edit_picture"
+    get 'pictures/:id/edit' => "pictures#edit", as: "edit_picture"
     patch 'pictures/:id' => "pictures#update"
 
     post 'pictures' => 'pictures#create'
     get 'pictures/new' => 'pictures#new'
 
     get 'pictures/:id' => 'pictures#show', as: "picture"
-  end
+
+    delete 'pictures/:id' => 'picture#destroy', as: "delete_picture"
+    
+    root 'pictures#index'
+end
+    
 
   #   get 'pictures/0' => 'pictures#picture0'
   #   get 'pictures/1' => 'pictures#picture1'
@@ -73,4 +77,3 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
