@@ -5,19 +5,16 @@
   # root 'welcome#index'
 
 Rails.application.routes.draw do
+  resources :pictures
+    # post 'pictures' => 'pictures#create'
 
-    get 'pictures' => 'pictures#index'
-
-    get 'pictures/:id/edit' => "pictures#edit", as: "edit_picture"
-    patch 'pictures/:id' => "pictures#update"
-
-    post 'pictures' => 'pictures#create'
-    get 'pictures/new' => 'pictures#new'
-
-    get 'pictures/:id' => 'pictures#show', as: "picture"
-
-    delete 'pictures/:id' => 'picture#destroy', as: "delete_picture"
+    # get 'pictures' => 'pictures#index'
+    # get 'pictures/new' => 'pictures#new'
+    # get 'pictures/:id/edit' => "pictures#edit", as: "edit_picture"
+    # get 'pictures/:id' => 'pictures#show', as: "picture"
     
+    # delete 'pictures/:id' => 'pictures#destroy', as: "delete_picture"
+
     root 'pictures#index'
 end
     
