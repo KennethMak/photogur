@@ -18,6 +18,7 @@ class PicturesController < ApplicationController
 			redirect_to pictures_url
 		else
 			render :new
+		end
 		# render :text => "Saving a picture. URL: #{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
 	end
 
