@@ -8,9 +8,11 @@ Rails.application.routes.draw do
   Rails.application.routes.draw do
     get 'pictures' => 'pictures#index'
 
-    get 'pictures/0' => 'pictures@picture0'
+    get 'pictures/0' => 'pictures#picture0'
     get 'pictures/1' => 'pictures#picture1'
     get 'pictures/2' => 'pictures#picture2'
+    get 'pictures/3' => 'pictures#picture3'
+    get 'pictures/4' => 'pictures#picture4'
   end
 
   # Example of regular route:
